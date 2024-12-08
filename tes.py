@@ -50,27 +50,27 @@
 # ans(n,0)
 # print(tabel,'\n',total(len(tabel)-1))
 
-dict_pass = {1:[1]}
-def len_string(n):
-    if n in dict_pass:
-        return dict_pass[n]
-    else:
-        for i in range(2,n+1):
-            dict_pass[i] = dict_pass[i-1] + [i] + dict_pass[i-1]
-        return dict_pass[i]
+# dict_pass = {1:[1]}
+# def len_string(n):
+#     if n in dict_pass:
+#         return dict_pass[n]
+#     else:
+#         for i in range(2,n+1):
+#             dict_pass[i] = dict_pass[i-1] + [i] + dict_pass[i-1]
+#         return dict_pass[i]
 
-def password(n):
-    for i in len_string(n):
-        if i == n:
-            print("z"*i)
-        elif i % 2 == 1:
-            print("d"*i)
-        else:
-            print("e"*i)
+# def password(n):
+#     for i in len_string(n):
+#         if i == n:
+#             print("z"*i)
+#         elif i % 2 == 1:
+#             print("d"*i)
+#         else:
+#             print("e"*i)
 
-N = int(input())
-print(dict_pass)
-password(N)
+# N = int(input())
+# print(dict_pass)
+# password(N)
 
 # 5 6 
 # 00020
@@ -86,3 +86,38 @@ password(N)
 # 21010
 # 00000
 # 11110
+
+# dic = { "ajan":3, "budi":1, "kwon":2}
+
+# # sot = sorted(dic,key=lambda index: dic.values())
+# sep = sorted(dic.items(),key=lambda item:item[1])
+# print(sep)
+
+# n = [3,2,4,22,333,11]
+# def ko(x):
+#     return -len(str(x)),x
+
+# n.sort(key=ko)
+# print(n)
+
+m,n = map(int,input().split())
+mat = []
+for i in range (n):
+    temp = list(map(int,input().split()))
+    mat.append(temp)
+
+target = input() 
+x = 0 
+y = 0 
+def linearSearch(x,y,m,n,mat):
+    for i in range (m):
+        for j in range(n):
+            if mat[i][j] == target:
+                x = i+1
+                y = i+1
+                print(x,y)
+                return x,y 
+
+linearSearch(x,y,m,n,mat)
+        
+print(f"Element {target} found at position: ({x},{y})")

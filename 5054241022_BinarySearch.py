@@ -1,3 +1,4 @@
+import time
 def binarySearch(array, x, low, high):
     if high >= low:
         mid = low + (high - low)//2
@@ -14,4 +15,10 @@ def binarySearch(array, x, low, high):
 array = [23, 24, 55, 76, 87, 90, 120]
 x = 24
 
-print(binarySearch(array, x, 0, len(array)-1))
+start_time = time.time()
+a = binarySearch(array, x, 0, len(array)-1)
+end_time = time.time()
+time_taken = end_time - start_time
+
+print(a)
+print(time_taken)
