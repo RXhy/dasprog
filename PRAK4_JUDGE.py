@@ -10,7 +10,6 @@ mat = []
 for i in range (n):
     temp = list(map(int,input().split()))
     mat.extend(temp)
-    print(mat)
 
 q = input()
 r = list(map(int,input().split()))
@@ -20,4 +19,5 @@ def display():
     for rindex in r:
         result.append(Usia(mat,rindex,counter=0))
     print(*result)
-# display()
+    
+display()
